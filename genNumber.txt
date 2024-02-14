@@ -1,0 +1,96 @@
+import java.util.*;
+
+public class genNumber {
+    public static void genNumber()
+    {
+        Random random = new Random();
+        int randomNumber = random.nextInt(100) + 1;
+
+        //System.out.println("Random number: " + randomNumber);
+
+        int count = 0;
+        for(int i=1;i<=10;i++)
+        {
+            Scanner sc = new Scanner(System.in);
+            System.out.println("Number Entered by the user: ");
+            int n = sc.nextInt();
+            if (n == randomNumber)
+            {
+                System.out.println("Correct");
+                break;
+            } else if (n > randomNumber)
+            {
+                System.out.println("User entered number is high");
+            } else if (n < randomNumber)
+            {
+                System.out.println("User entered number is low");
+            }
+            else
+            {
+                System.out.println("Incorrect input");
+            }
+            count++;
+
+        }
+        if (count==0){
+            System.out.println("Score = 100");
+            System.out.println("Outstanding");
+        } else if (count==1) {
+            System.out.println("Score = 90");
+            System.out.println("Outstanding");
+        }else if (count==2) {
+            System.out.println("Score = 80");
+            System.out.println("Excellent");
+        }else if (count==3) {
+            System.out.println("Score = 70");
+            System.out.println("Excellent");
+        }
+        else if (count==4) {
+            System.out.println("Score = 60");
+            System.out.println("Good");
+        }else if (count==5) {
+            System.out.println("Score = 50");
+            System.out.println("Good");
+        }else if (count==6) {
+            System.out.println("Score = 40");
+            System.out.println("Average");
+        }else if(count == 7){
+            System.out.println("Score = 30");
+            System.out.println("Average");
+        }
+        else if (count==8) {
+            System.out.println("Score = 20");
+            System.out.println("Poor");
+        }else if (count==9) {
+            System.out.println("Score = 10");
+            System.out.println("Poor");
+        }
+        else
+        {
+            System.out.println("Score = 00");
+            System.out.println("Better Luck next time");
+        }
+
+    }
+    public static void main(String[] args) {
+        System.out.println("WELCOME TO THE NUMBER GAME");
+        System.out.println("NUMBER OF ATTEMPTS = 10");
+        System.out.println("lET'S START");
+        genNumber();
+        for(int j=1;j<5;j++) {
+            System.out.println("Do you want to play again");
+            System.out.println("1. Yes");
+            System.out.println("2. No");
+            Scanner s = new Scanner(System.in);
+            int n1 = s.nextInt();
+            if (n1 == 1) {
+                System.out.println("Yes");
+                genNumber();
+            } else {
+                System.out.println("Exit");
+                break;
+            }
+        }
+
+    }
+}
